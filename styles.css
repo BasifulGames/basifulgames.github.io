@@ -43,10 +43,6 @@ h3 {
     pointer-events: none;
 }
 
-body {
-    overflow-x: hidden
-}
-
 body.responsive-off {
     min-width: 998px;
     overflow-x: auto
@@ -836,73 +832,6 @@ body #load {
   color: rgba(133,134,140,0.5);
 }
 
-body .fa-youtube-play:before,body .fa-youtube-square:before {
-  content: "\f167";
-}
-
-
-.the7-spinner > div {
-  animation: spinner-animation 1.2s cubic-bezier(1, 1, 1, 1) infinite;
-  width: 9px;
-  left: 0;
-  display: inline-block;
-  position: absolute;
-  background-color: var(--the7-beautiful-spinner-color2);
-  height: 18px;
-  top: 27px;
-}
-
-#load-wrap .loader-section.section-left {
-  left: 0;
-}
-
-#load-wrap .loader-section.section-right {
-  right: 0;
-}
-
-#loader {
-  z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
-}
-h1 {
-  color: #EEEEEE;
-}
-
-.load-wrap {
-    width: 100%;
-    height: 100%;
-    position:absolute;
-    top: 0;
-    left: 0;
-    background-color: #242f3f;
-    display: flex;
-    justify-content: center;
-}
-
-.loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #Fff;
-  top: 50%;
-  animation: loader 2s infinite ease;
-  
-}
-
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  animation: loader-inner 2s infinite ease-in;
-}
-
-/* meu */
-
-body {
-  background-color: #242F3F;
-}
-
 .loader {
   display: inline-block;
   width: 30px;
@@ -1037,4 +966,257 @@ body {
   position: absolute;
   top: 10%;
   left: 20%;
+}
+
+.guide-pinned.show-guide .guide-pinning-enabled #footer-container {
+  min-width: 713px;
+  padding-left: 260px;
+}
+
+#footer .bg-uix-button-icon-footer-language {
+  background: no-repeat url(//web.archive.org/web/20140430235408im_/https://s.ytimg.com/yts/imgbin/www-hitchhiker-vflecUUB6.png) -103px -318px;
+  background-size: auto;
+  width: 25px;
+  height: 15px;
+}
+
+.bg-uix-button .bg-uix-button-icon, .bg-uix-button .bg-uix-button-arrow {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.bg-uix-button img, .bg-uix-button-icon-wrapper+.bg-uix-button-content {
+  vertical-align: middle;
+}
+
+body #footer-container {
+  margin-top: -141px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #e2e2e2;
+}
+
+.bg-base-gutter {
+  min-width: 943px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, fieldset, font, form, h1, h2, h3, h4, h5, h6, hr, html, i, iframe, img, ins, kbd, label, legend, li, menu, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+}
+
+body {
+  background: #f1f1f1;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+
+body {
+  line-height: 1;
+  text-align: left;
+  text-align: start;
+}
+
+#footer-logo img {
+  vertical-align: middle;
+  /* background: no-repeat url(//web.archive.org/web/20140430235408im_/https://s.ytimg.com/yts/imgbin/www-hitchhiker-vflecUUB6.png) -27px -1092px; */
+  background-size: auto;
+  width: 72px;
+  height: 72px;
+}
+
+#footer-links {
+  padding: 15px 0 15px 8px;
+}
+
+#footer-links-primary a {
+  color: #333;
+}
+
+#footer-links-primary {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+a {
+  cursor: pointer;
+  color: #1b7fcc;
+  text-decoration: none;
+}
+a, abbr, acronym, address, applet, b, big, blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.bg-uix-button-arrow {
+  margin-top: -3px;
+  margin-left: 5px;
+  border: 1px solid transparent;
+  border-top-color: #333;
+  border-width: 4px 4px 0;
+  width: 0;
+  height: 0;
+}
+
+#footer-links-secondary a, #footer-links-secondary .copyright {
+  color: #666;
+  font-size: 11px;
+}
+
+#footer {
+  margin: 0 auto;
+  padding: 15px 0
+}
+
+#footer-logo,#footer .pickers,#footer .pickers li,#footer #google-help {
+  display: inline-block;
+  *display: inline;
+  *zoom:1}
+
+#footer #google-help .yt-uix-button-content {
+  vertical-align: middle
+}
+
+#footer .yt-uix-button-group .yt-uix-button {
+  border-radius: 2px;
+}
+
+#footer-logo {
+  margin-left: 4px
+}
+
+#footer-logo img {
+  vertical-align: middle;
+  background: no-repeat url(favicon.png) -27px -1092px;
+  background-size: auto;
+  width: 52px;
+  height: 52px
+}
+
+#footer-main {
+  border-bottom: 1px solid #e2e2e2;
+  margin-right: 45px;
+  padding-bottom: 15px;
+  padding-left: 4px
+}
+
+#footer-logo,#footer .pickers li {
+  margin-right: 14px
+}
+
+#footer .yt-picker-button-label {
+  font-weight: normal
+}
+
+#footer .yt-picker {
+  margin: 10px 0
+}
+
+#footer-links {
+  padding: 15px 0 15px 8px;
+}
+
+#footer-links li {
+  display: inline;
+  margin-right: 15px
+}
+
+#footer-links-primary {
+  margin-bottom: 8px;
+  font-weight: bold
+}
+
+#footer-links-primary a {
+  color: #333;
+}
+
+#footer-links-primary a:hover {
+  color: #1b7fcc
+}
+
+#footer-links-secondary a,#footer-links-secondary .copyright {
+  color: #666;
+  font-size: 11px;
+}
+
+#footer-links-secondary a {
+  font-weight: bold
+}
+
+#footer-links-secondary a:hover {
+  color: #1b7fcc
+}
+
+#footer .yt-picker {
+  padding: 20px;
+  box-shadow: none;
+  border-radius: 0
+}
+
+#footer .bg-uix-button-icon-footer-language {
+  background: no-repeat url(favicon.png) -103px -318px;
+  background-size: auto;
+  width: 25px;
+  height: 15px
+}
+
+#footer .bg-uix-button:hover .bg-uix-button-icon-footer-language {
+  background-position: -93px -880px
+}
+
+#footer .questionmark {
+  opacity: .75;
+  background: no-repeat url(favicon.png) 0 -422px;
+  background-size: auto;
+  width: 15px;
+  height: 16px
+}
+
+#footer .yt-uix-button:hover .questionmark {
+  opacity: 1
+}
+
+.site-center-aligned #footer-container {
+  background-color: #fff;
+}
+
+#footer-links {
+  padding: 15px 0 15px 8px;
+}
+
+#footer .bg-uix-button-group .bg-uix-button {
+  border-radius: 2px;
+}
+
+.bg-uix-button-group .bg-uix-button {
+  margin-right: -2px;
+  border-radius: 0;
+}
+
+.bg-uix-button-icon-wrapper {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 0;
+  vertical-align: middle;
+}
+
+.bg-uix-button img, .bg-uix-button-icon-wrapper+.bg-uix-button-content {
+  vertical-align: middle;
+}
+
+menu, ol, ul {
+  list-style: none;
 }
