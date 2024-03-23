@@ -306,6 +306,25 @@ a:-webkit-any-link {
   left: 20%;
 }
 
+body>#body-container {
+  height: auto;
+  min-height: 100%;
+}
+
+#content-container, #body-container {
+  padding-bottom: 191px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, #body-container {
+  height: 100%;
+}
+
+.individual-feed {
+  position: relative;
+}
+
 .guide-pinned.show-guide .guide-pinning-enabled #footer-container {
   min-width: 713px;
   padding-left: 260px;
@@ -567,10 +586,6 @@ menu, ol, ul {
   width: 1262px;
 }
 
-.branded-page-v2-body {
-  min-height: 700px;
-}
-
 canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, fieldset, font, form, h1, h2, h3, h4, h5, h6, hr, html, i, iframe, img, ins, kbd, label, legend, li, menu, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
   margin: 0;
   padding: 0;
@@ -663,6 +678,11 @@ canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, field
   box-sizing: border-box;
 }
 
+.bg-thumb-icon img, .bg-thumb-icon .vertical-align {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .site-center-aligned .bg-card {
   margin: 10px 0;
   border: 0;
@@ -716,6 +736,67 @@ canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, field
 .shelf-item .branded-page-module-title {
   overflow: visible;
   display: inline-block;
+}
+
+.shelf-item .branded-page-module-title .branded-page-module-title-text {
+  margin-top: 1px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.feed-item-container .branded-page-module-title .branded-page-module-title-link {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.yt-thumb {
+  width: 100%;
+  overflow: hidden;
+  background: #f1f1f1;
+  font-size: 0;
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  *zoom:1}
+
+.bg-thumb .vertical-align {
+  height: 100%
+}
+
+.bg-thumb img {
+  font-size: 13px;
+  outline: none;
+  -ms-interpolation-mode: bicubic
+}
+
+/*.bg-thumb-icon {
+  position: absolute;
+  _position: static;
+  bottom: -100px;
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  text-align: center;
+  white-space: nowrap;
+  word-break: normal
+}*/
+
+.bg-thumb-square {
+  padding-bottom: 100%;
+}
+
+.bg-thumb-icon img,.bg-thumb-icon .vertical-align {
+  display: inline-block;
+  vertical-align: middle
+}
+
+.branded-page-module-title a:visited, .branded-page-module-title a {
+  color: #333;
+}
+a {
+  cursor: pointer;
+  color: #1b7fcc;
+  text-decoration: none;
 }
 
 .branded-page-module-title {
