@@ -14,14 +14,6 @@ input,button,textarea {
 .same-logo {
     pointer-events: none;
 }
-/*
-#bg-masthead #logo {
-  background: no-repeat url(logo_completo.png) -27px -1092px;
-  background-size: auto;
-  width: 72px;
-  height: 30px;
-}*/
-
 
 body #footer-container {
   margin-top: -141px;
@@ -175,7 +167,7 @@ a:-webkit-any-link {
 
 #bg-masthead-signin {
   float: right;
-  margin-top: -38px;
+  margin-top: 3px;
   margin-left: 25px;
 }
 
@@ -298,6 +290,185 @@ a:-webkit-any-link {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+}
+
+.bg-uix-button-default, .bg-uix-button-default[disabled], .bg-uix-button-default[disabled]:hover, .bg-uix-button-default[disabled]:active, .bg-uix-button-default[disabled]:focus {
+  border-color: #d3d3d3;
+  background: #f8f8f8;
+  color: #333;
+}
+
+.hid {
+  display: none;
+}
+
+#masthead-search.consolidated-form input {
+  outline: none;
+  height: 100%;
+}
+
+#masthead-search-terms input {
+  display: inline-block;
+  width: 100%;
+  padding: 2px 6px;
+  margin: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  _position: absolute;
+  _left: 0;
+  _width: 100%;
+  zoom: 1;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.search-term {
+  width: 100%;
+}
+
+#masthead-search.consolidated-form #masthead-search-terms label {
+  height: 100%;
+}
+
+#masthead-search-terms label {
+  display: block;
+  _margin-top: 5px;
+}
+
+#masthead-search label {
+  height: 100%;
+  line-height: 30px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+#masthead-search-terms {
+  position: relative;
+  overflow: hidden;
+  height: 29px;
+  margin: 0 0 2px;
+  _padding-left: 5px;
+  _padding-right: 5px;
+  font-size: 14px;
+  line-height: 30px;
+  background-color: #fff;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: border-color .2s ease;
+  -webkit-transition: border-color .2s ease;
+  transition: border-color .2s ease;
+}
+.masthead-search-terms-border {
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 2px #eee;
+}
+
+#bg-masthead #search-btn .bg-uix-button-content {
+  margin: 0 25px;
+}
+
+#masthead-search .search-btn-component .bg-uix-button-content {
+  display: block;
+  border: none;
+  padding: 0;
+  opacity: .6;
+  text-indent: -10000px;
+  background: no-repeat url(//web.archive.org/web/20140502014212im_/https://s.ytimg.com/yts/imgbin/www-hitchhiker-vflecUUB6.png) -27px -399px;
+  background-size: auto;
+  width: 14px;
+  height: 14px;
+  box-shadow: none;
+}
+
+#bg-masthead .bg-masthead-logo-container {
+  float: left;
+  position: relative;
+  margin-top: 2px;
+  width: 200px;
+}
+
+#bg-masthead .bg-masthead-logo-container #logo-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#bg-masthead #logo {
+  background: no-repeat url(logo_completo.png) -27px -1092px;
+  background-size: auto;
+  width: 162px;
+  height: 40px;
+}
+
+#bg-masthead {
+  margin: 0 auto;
+}
+
+#bg-masthead #search-btn {
+  padding: 0;
+}
+
+#masthead-search .search-btn-component, #masthead-search .search-btn-component .start {
+  border-left: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+}
+
+#masthead-search .search-btn-component {
+  float: right;
+  padding: 0 0.91em;
+  opacity: 1;
+  filter: none;
+  _margin-left: -3px;
+}
+
+#masthead-search .search-btn-component {
+  height: 29px;
+}
+
+#masthead-search {
+  position: relative;
+  padding: 0;
+  margin-top: 3px;
+  overflow: hidden;
+  max-width: 650px;
+}
+
+#masthead_child_div {
+  width: 970px;
+  margin: 0 auto;
+}
+
+#bg-masthead-content {
+  overflow: hidden;
+}
+
+.bg-uix-button-default, .bg-uix-button-default[disabled], .bg-uix-button-default[disabled]:hover, .bg-uix-button-default[disabled]:active, .bg-uix-button-default[disabled]:focus {
+  border-color: #d3d3d3;
+  background: #f8f8f8;
+  color: #333;
+}
+
+.bg-uix-button {
+  display: inline-block;
+  height: 28px;
+  border: solid 1px transparent;
+  padding: 0 10px;
+  outline: 0;
+  font-weight: bold;
+  font-size: 11px;
+  text-decoration: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  line-height: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
 }
 
 .all-tabs {
@@ -692,6 +863,17 @@ canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, field
   box-sizing: border-box;
 }
 
+.site-center-aligned .bg-scrollbar-dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 9px
+}
+
+.bg-uix-button-default,.bg-uix-button-default[disabled],.bg-uix-button-default[disabled]:hover,.bg-uix-button-default[disabled]:active,.bg-uix-button-default[disabled]:focus {
+  border-color: #b9b9b9;
+  background: #f8f8f8;
+  color: #333
+}
+
 .guide-pinned.show-guide .guide-pinning-enabled #page, .guide-pinned.show-guide .guide-pinning-enabled #appbar-content {
   padding-left: 230px;
 }
@@ -749,7 +931,7 @@ canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, field
   vertical-align: bottom;
 }
 
-.yt-thumb {
+.bg-thumb {
   width: 100%;
   overflow: hidden;
   background: #f1f1f1;
