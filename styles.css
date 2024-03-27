@@ -578,9 +578,11 @@ a, abbr, acronym, address, applet, b, big, blockquote {
 }
 
 a:-webkit-any-link {
-  color: -webkit-link;
+  /*color: -webkit-link;*/
+  color: white;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
+  /*text-decoration: underline;*/
 }
 
 .bg-uix-button {
@@ -852,6 +854,13 @@ canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, field
 .bg-thumb-icon img, .bg-thumb-icon .vertical-align {
   display: inline-block;
   vertical-align: middle;
+}
+
+.appbar-hidden #masthead-positioner-height-offset {
+  height: 50px;
+}
+#masthead-positioner-height-offset {
+  height: 90px;
 }
 
 .site-center-aligned .bg-card {
