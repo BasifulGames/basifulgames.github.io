@@ -1,24 +1,23 @@
-const searchButton = document.querySelector('.search');
-const searchInput = document.querySelector('.search-input');
+document.querySelector(".bg-uix-subscription-button").onclick = function() {
+  // Incrementa o contador de downloads
+  var downloadCount = parseInt(document.getElementById("bg-lockup-meta-info").innerText);
+  downloadCount++;
+  document.getElementById("bg-lockup-meta-info").innerText = downloadCount;
 
-searchButton.addEventListener('click', function() {
-    if (searchInput.classList.contains('hidden')) {
-        searchInput.classList.remove('hidden');
-    } else {
-        searchInput.classList.add('hidden');
-    }
+  // Inicia o download do arquivo
+  var downloadLink = document.createElement("a");
+  downloadLink.href = "MFE.msi"; // Substitua pelo caminho do seu arquivo
+  downloadLink.download = "MFE.msi"; // Substitua pelo nome do seu arquivo
+  downloadLink.click();
+};
+
+// Selecione o botão pelo seletor de classe
+var botaoProduto = document.querySelector('.bg-uix-subscription-button');
+
+// Adicione um ouvinte de evento de clique ao botão
+botaoProduto.addEventListener('click', function() {
+    // Obtém o ID do produto
+    var idDoProduto = 3535; // Altere para o ID correto do seu produto
+    // Redireciona para products.html com o ID do produto como parâmetro de consulta
+    window.location.href = 'products.html?p=' + idDoProduto;
 });
-
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myHeader");
-
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
