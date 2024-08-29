@@ -593,6 +593,134 @@ body {
   font-weight: bold;
 }
 
+body > div .wrap-top {
+  background-color: #3C3C3B;
+}
+
+body > div .wrap-top {
+  background: linear-gradient(90deg, #475641, #434d59, #4c4652, #5e3845, #614a38, #615138);
+}
+body > div .wrap-top {
+  background-color: #3C3C3B;
+}
+body > div .wrap-top {
+  background: linear-gradient(90deg, #475641, #434d59, #4c4652, #5e3845, #614a38, #615138);
+}
+
+.container, aside.banners-footer, footer .bloque-footer-1, footer .bloque-footer-2, footer .bloque-footer-medios {
+  width: 1170px;
+}
+
+.secondary-nav {
+  padding: 7px 0 4px 0;
+}
+.container {
+  width: 1170px;
+  overflow: visible;
+  position: relative;
+  clear: both;
+  margin: 0 auto;
+}
+.secondary-nav {
+  padding: 10px 0 10px 0;
+  text-align: right;
+}
+.secondary-nav {
+  padding: 7px 0 4px 0;
+}
+.container {
+  width: 1170px;
+  overflow: visible;
+  position: relative;
+  clear: both;
+  margin: 0 auto;
+}
+.secondary-nav {
+  padding: 10px 0 10px 0;
+  text-align: right;
+}
+
+#animado div.envio p, #animado div.portes p {
+  background: none;
+  padding-left: 0px;
+  font-family: 'Roboto';
+  padding-right: 2px;
+}
+
+#animado .info {
+  margin-top: 0px;
+  margin-left: 0px;
+  background: #378c42;
+  width: 12px;
+  text-align: center;
+  border-radius: 11px;
+  color: #fff;
+  height: 12px;
+  cursor: context-menu;
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+  line-height: 13px;
+  font-size: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#animado .info div {
+  margin-left: -109px !important;
+}
+
+#animado .info div {
+  display: none;
+  position: absolute !important;
+  width: 300px !important;
+  margin-left: -325px !important;
+  background: #fff !important;
+  color: #000 !important;
+  padding: 20px !important;
+  border: 1px solid #eaebeb !important;
+  font-size: 12px !important;
+  text-align: left !important;
+  font-family: 'Roboto' !important;
+  z-index: 999999 !important;
+  min-height: 35px !important;
+}
+
+.secondary-nav a, .secondary-nav p, .secondary-nav span.tel {
+  padding: 1px 12px 1px 12px;
+  font-size: .9em;
+  text-decoration: none;
+  color: #eee;
+  background: url(../bg/img/separator.png) no-repeat 100% 50%;
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+
+.jq-ry-container>.jq-ry-group-wrapper>.jq-ry-group>svg {
+  display: inline-block;
+}
+
+svg {
+  max-width: 200px;
+}
+
+.jq-ry-container>.jq-ry-group-wrapper>.jq-ry-group {
+  position: relative;
+  line-height: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.rate_stars_top .rateYoShop {
+  float: left;
+  margin-top: 3px;
+}
+
+.jq-ry-container>.jq-ry-group-wrapper {
+  position: relative;
+  width: 100%;
+}
+
 a {
   cursor: pointer;
   color: #1b7fcc;
@@ -1151,4 +1279,172 @@ button {
 
 .branded-page-box, .branded-page-box-padding {
   padding: 15px;
+}
+
+.secondary-nav p svg path {
+  fill: #fff;
+}
+
+.secondary-nav p svg {
+  width: 16px;
+  vertical-align: text-bottom;
+  margin-right: 3px;
+} 
+
+.languages #languages-tool {
+  display: block;
+}
+
+.languages {
+  padding-bottom: 0px;
+  display: inline-block;
+}
+
+.languages .languages-detach a, .languages .languages-detach p {
+  padding: 0;
+  border: none;
+  color: #000;
+  display: block;
+  cursor: pointer;
+  padding-left: 20px;
+  margin-left: 5px;
+}
+
+.languages .languages-detach {
+  display: none;
+  position: absolute;
+  padding: 5px 5px 5px 5px;
+  background-color: #fff !important;
+  z-index: 9;
+  right: 9px;
+  width: auto;
+  text-align: left;
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #fff;
+}
+
+#guide-container {
+  width: 230px;
+  padding: 13px 22px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.guide-pinned .guide-pinning-enabled #appbar-guide-menu {
+  border-right: 1px solid #e8e8e8;
+  box-shadow: none;
+}
+
+.show-guide #appbar-guide-menu {
+  box-shadow: 5px 10px 15px 5px rgba(0, 0, 0, .1);
+}
+#appbar-guide-menu, .guide-flyout {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 1999999999;
+}
+#appbar-guide-menu {
+  width: 230px;
+  height: auto;
+  max-height: 100%;
+}
+
+.guide-pinned .guide-pinning-enabled .appbar-guide-menu-layout {
+  height: 100%;
+  bottom: 0;
+}
+
+.guide-item .display-name.no-count {
+  width: 140px;
+}
+
+.guide-item .display-name {
+  vertical-align: bottom;
+}
+.guide-item .display-name {
+  width: 110px;
+  margin-left: 6px;
+  line-height: 20px;
+}
+.guide-item .display-name {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap: normal;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.show-guide .appbar-guide-menu-layout {
+  visibility: visible;
+  left: 0;
+  opacity: 1;
+  -moz-transition: opacity .1s;
+  -webkit-transition: opacity .1s;
+  transition: opacity .1s;
+}
+
+.appbar-guide-menu-layout {
+  position: fixed;
+  width: 230px;
+  top: 0;
+  visibility: hidden;
+  left: -230px;
+  opacity: 0;
+  -moz-transition: opacity .1s, visibility 0s .1s;
+  -webkit-transition: opacity .1s, visibility 0s .1s;
+  transition: opacity .1s, visibility 0s .1s;
+}
+.appbar-guide-menu-layout {
+  margin-top: 50px;
+}
+
+.bg-valign:before, .bg-valign-container {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.guide-item {
+  overflow: hidden;
+}
+
+.guide-item {
+  color: #222;
+  height: 28px;
+  font-size: 12px;
+}
+.guide-item, .guide-view-more {
+  display: block;
+  position: relative;
+  border: none;
+  background: none;
+}
+.bg-valign {
+  white-space: nowrap;
+}
+
+.guide-header p {
+  margin: 10px 0;
+}
+
+.guide-section.signup-promo {
+  padding: 0;
+  line-height: 1.3em;
+}
+
+.bg-base-gutter p svg path {
+  fill: #333333;
+}
+
+.bg-base-gutter p svg {
+  width: 16px;
+  vertical-align: text-bottom;
+  margin-right: 3px;
+}
+
+.bg-base-gutter p svg {
+  width: 16px;
+  vertical-align: text-bottom;
+  margin-right: 3px;
 }
