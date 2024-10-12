@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link id="css-652481997" class="www-core" rel="stylesheet" href="product.css" data-loaded="true">
+    <link rel="shortcut icon" href="/bg/img/favicon.png" type="image/x-icon">
+    <link id="css-2080427379" class="www-pageframe" rel="stylesheet" href="general.css">
+    <style>
+        .error-message {
+            font-size: 24px;
+            color: red;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid red;
+            border-radius: 10px;
+            background-color: #ffe6e6;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body dir="ltr" class="  ltr       site-center-aligned site-as-giant-card appbar-hidden     not-nirvana-dogfood  hitchhiker-enabled    delayed-frame-styles-not-in    exp-css-ellipsis  " id="body">
     <div id="body-container">
@@ -43,12 +57,20 @@
         </div>
         <div id="masthead-positioner-height-offset"></div>
         <div id="page-container">
-            <div id="page" class="  watch   clearfix">
+            <div id="page" class="  watch      watch-non-stage-mode   clearfix">
+                <div id="player" class="      watch-small  ">
+                    <div id="playlist" class="playlist"> </div>
+                    <div id="player-api" class="    hid    player-width player-height ">
+                        <video tabindex="-1" class="video-stream html5-main-video" controlslist="nodownload" style="width: 809px; height: 607px; left: 0px; top: 0px;" src="teasers/MFE Update 1.5.0.mp4"></video>
+                    </div>
+                </div>
                 <div id="content" class="  content-alignment    bg-card ">
-                    <div id="watch7-container" class="      watch-non-stage-mode  ">
+                    <div id="watch7-container" class>
                         <div id="watch7-main-container">
-                            <div id="watch7-content" class="watch-content " itemscope itemid itemtype="http://schema.org/VideoObject">
-                                <meta itemprod="paid" content="False">
+                            <div id="watch7-main" class="clearfix">
+                                <div id="watch7-content" class="watch-content " itemscope itemid itemtype="http://schema.org/VideoObject">
+                                    <link itemprop="name" content="">
+                                    <meta itemprod="paid" content="False">
                                 <div id="bg-uix-button-panel">
                                     <div id="watch7-headline" class="clearfix  bg-uix-expander bg-uix-expander-collapsed">
                                         <h1 id="watch-headline-title" class="bg">
@@ -174,8 +196,17 @@
                                                         <p id="watch-uploader-info">
                                                             <strong>
                                                                 Released on 
+                                                                <span id="eow-date" class="watch-product-date">
+
+                                                                </span>
                                                             </strong>
                                                         </p>
+                                                        <div id="watch-description-text">
+                                                            <p id="eow-description">
+
+                                                                <a href=""></a>
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -183,11 +214,164 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
+                        </div>
+                            
+                        <div id="watch7-sidebar" class="watch-sidebar">
+                            <div id="watch7-sidebar-playlist"> </div>
+                            <div id="watch7-sidebar-contents" class="watch-sidebar-gutter ">
+                                <div id="watch7-sidebar-offer"> </div>
+                                <div id="watch7-sidebar-discussion"></div>
+                                <div id="watch7-sidebar-ads">
+                                    <div id="watch-channel-brand-div" class>
+                                        <div id="watch-channel-brand-div-text">                                            Advertisement
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="watch7-sidebar-modules">
+                                    <div class="watch-sidebar-section">
+                                        <div class="watch-sidebar-body">
+                                            <ul id="watch-related" class="video-list">
+                                                <li class="video-list-item related-list-item">
+                                                    <a href="" class=" related-video-featured hid related-video spf-link bg-uix-sessionlink">
+                                                        <span class="bg-uix-simple-thumb-wrap bg-uix-simple-thumb-related"
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    <div id="footer-container" class="bg-base-gutter">
+        <div id="footer">
+            <div id="footer-main">
+                <div id="footer-logo">
+                    <a href="https://basifulgames.github.io/" title="BasifulGames home">
+                        <img src="bg/img/favicon.png" alt="BasifulGames home">
+                    </a>
+                </div>
+                <ul class="pickers bg-uix-button-group" data-button-toggle-group="optional"></ul>
+                <button onclick=";return false;" type="button" class="bg-uix-button-reverse bg-google-help-link inq-no-click  bg-uix-button bg-uix-button-default bg-uix-button-size-default" data-ghelp-tracking-param id="basifulgames-help" data-ghelp-anchor="basifulgames-help" role="button">
+                    <span class="bg-uix-button-content">
+                        <img>
+                    </span>
+                </button>
+            </div>
+            <div id="footer-links"></div>
+        </div>
+    </div>
+    <div class="bg-dialog hid" id="feed-privacy-lb">
+        <div class="bg-dialog-base">
+            <span class="bg-dialog-align"></span>
+            <div class="bg-dialog-fg">
+                <div class="bg-dialog-fg-content">
+                    <div class="bg-dialog-loading"></div>
+                    <div class="bg-dialog-content">
+                        <div id="feed-privacy-dialog"> </div>
+                    </div>
+                    <div class="bg-dialog-working">
+                        <div class="bg-dialog-working-overlay"></div>
+                        <div class="yt-dialog-working-bubble">
+                            <div class="bg-dialog-waiting-content">
+                                <div class="bg-spinner-img"></div>
+                                <div class="bg-dialog-waiting-text">Working...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function loadProductData() {
+            const productId = getParameterByName('id');
+            if (productId) {
+                const productData = {
+                    1: {
+                        title: "Multi-funtion Entertainment",
+                        description: "Founded in November 2022, Multi-function entertainment is a consumer media company for people to entertaining yoursef.",
+                        videoUrl: "videos/video1.mp4",
+                        views: "200 views",
+                        releaseDate: "November 2022"
+                    },
+                    2: {
+                        title: "Synonymous Checker",
+                        description: "An application that serves to consult synonyms for a given word. Execute the .msi file to install the product on your computer. After running and enjoying the product, leave your feedback here so we can improve our product.",
+                        videoUrl: "videos/video2.mp4",
+                        views: "150 views",
+                        releaseDate: "October 2023"
+                    },
+                    3: {
+                        title: "Passwords Rememberer",
+                        description: "With this software you can save your passwords.",
+                        videoUrl: "videos/video2.mp4",
+                        views: "150 views",
+                        releaseDate: "05/10/2023"
+                    },
+                    4: {
+                        title: "Random Number & Letter Generator + Coin Flip",
+                        description: "An software who generates random numbers & letters!",
+                        videoUrl: "videos/video2.mp4",
+                        views: "150 views",
+                        releaseDate: "05/10/2023"
+                    },
+                    5: {
+                        title: "Zenealth",
+                        description: "The best or monitoring your health.",
+                        videoUrl: "videos/video2.mp4",
+                        views: "150 views",
+                        releaseDate: "05/10/2023"
+                    },
+                    6: {
+                        title: "File Converter",
+                        description: "An software who converts image files to what you want!",
+                        videoUrl: "videos/video2.mp4",
+                        views: "150 views",
+                        releaseDate: "05/10/2023"
+                    },
+                    7: {
+                        title: "World Clock",
+                        description: "Este é o terceiro vídeo.",
+                        videoUrl: "videos/video3.mp4",
+                        views: "180 views",
+                        releaseDate: "10/10/2023"
+                    }
+                };
+
+                if (productData[productId]) {
+                    const product = productData[productId];
+
+                    document.getElementById('eow-title').innerText = product.title;
+                    document.getElementById('eow-description').innerText = product.description;
+                    document.getElementById('eow-date').innerText = product.releaseDate;
+                    document.querySelector('.watch-view-count').innerText = product.views;
+                    document.getElementById('product-video-source').src = product.videoUrl;
+
+                   const videoElement = document.getElementById('product-video');
+                    videoElement.load();
+                } else {
+                    document.body.innerHTML = `
+                    <div class="error-message">
+                        Product not found.
+                    </div>
+                `;
+                }
+            }
+        }
+
+        window.onload = loadProductData;
+    </script>
 </body>
 </html>
