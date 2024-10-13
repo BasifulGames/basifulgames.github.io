@@ -60,6 +60,10 @@
                 font-size: 14px; /* Tamanho da fonte para metadados */
                 color: gray; /* Cor dos metadados */
             }
+            .highlight {
+                background-color: yellow; /* Destaque com fundo amarelo */
+                font-weight: bold; /* Negrito para o texto destacado */
+            }
         </style>
     </head> 
     <body dir="ltr" class="  ltr       site-center-aligned site-as-giant-card appbar-hidden     not-nirvana-dogfood  hitchhiker-enabled    delayed-frame-styles-not-in    exp-css-ellipsis  " id="body"> 
@@ -160,21 +164,21 @@
             { 
                 name: "Passwords Rememberer", 
                 description: "With this software you can save your passwords.", 
-                image: "path/to/imageC.jpg", 
+                image: "Passwords-Manager.ico", 
                 date: "2024-10-08", 
                 views: 300 
             },
             { 
                 name: "Random Number & Letter Generator + Coin Flip", 
                 description: "An software who generates random numbers & letters!", 
-                image: "path/to/imageD.jpg", 
+                image: "Random number generator.jpg", 
                 date: "2024-10-05", 
                 views: 150 
             },
             { 
                 name: "Zenealth", 
                 description: "The best or monitoring your health.", 
-                image: "path/to/imageE.jpg", 
+                image: "Zenealth.ico", 
                 date: "2024-10-01", 
                 views: 50 
             }
@@ -184,6 +188,11 @@
         function getSearchTerm() {
             const params = new URLSearchParams(window.location.search);
             return params.get('search_query') || '';
+        }
+
+        function highlightSearchTerm(text, searchTerm) {
+            const regex = new RegExp(`(${searchTerm})`, 'gi'); // Case insensitive
+            return text.replace(regex, '<span class="highlight">$1</span>'); // Destaca o termo
         }
 
         function displayResults() {
@@ -203,11 +212,13 @@
                     const softwareDiv = document.createElement('div');
                     softwareDiv.className = 'software-item';
                     softwareDiv.innerHTML = `
-                        <h2>${software.name}</h2>
                         <img src="${software.image}" alt="${software.name}" class="software-image">
-                        <p><strong>Descrição:</strong> ${software.description}</p>
-                        <p><strong>Data de Carregamento:</strong> ${software.date}</p>
-                        <p><strong>Visualizações:</strong> ${software.views}</p>
+                        <div>
+                            <h2 class="software-title">${highlightSearchTerm(software.name, searchTerm)}</h2>
+                            <p class="software-description"><strong>Descrição:</strong> ${software.description}</p>
+                            <p class="software-meta"><strong>Data de Carregamento:</strong> ${software.date}</p>
+                            <p class="software-meta"><strong>Visualizações:</strong> ${software.views}</p>
+                        </div>
                     `;
                     resultsContainer.appendChild(softwareDiv);
                 });
