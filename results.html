@@ -42,7 +42,7 @@
                 align-items: center; /* Alinha a imagem e o texto no centro verticalmente */
             }
             .software-image {
-                max-width: 150px; /* Define uma largura fixa para a imagem */
+                width: 100px; /* Define uma largura fixa para a imagem */
                 height: auto; /* Mantém a proporção da imagem */
                 border-radius: 10px; /* Cantos arredondados */
                 margin-right: 20px; /* Espaçamento entre a imagem e o texto */
@@ -225,6 +225,15 @@
             } else {
                 noResultsMessage.style.display = 'block'; // Exibe a mensagem de nenhum resultado
             }
+        }
+
+        function validateSearch() {
+            const searchTerm = document.getElementById('masthead-search-term').value.trim();
+            if (!searchTerm) {
+                alert('Por favor, insira um termo de pesquisa.');
+                return false; // Impede o envio do formulário
+            }
+            return true; // Permite o envio do formulário
         }
 
         // Redireciona se o usuário acessar diretamente results.html
