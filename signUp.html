@@ -46,6 +46,7 @@
                                         <span class="placeholder-text" id="lastname-placeholder" style="display: block;">Last</span>
                                     </label>
                                 </fieldset>
+                                <button type="submit" class="submit-button">Create Account</button> <!-- Botão de envio -->
                                 <span role="alert" class="errormsg" id="errormsg_0_FirstName" style="display: none;">You can't leave this empty.</span>
                                 <span role="alert" class="errormsg" id="errormsg_0_LastName">You can't leave this empty.</span>
                                 <span role="alert" class="errormsg" id="errormsg_0_Email" style="display: none;">You can't leave this empty.</span>
@@ -74,7 +75,6 @@
             }
 
             // Aqui você pode adicionar a lógica para enviar os dados para o servidor
-            // por exemplo, usando fetch ou XMLHttpRequest
             const data = {
                 firstName,
                 lastName,
@@ -92,7 +92,6 @@
             })
             .then(response => response.json())
             .then(data => {
-                // Manipulação da resposta do servidor
                 console.log('Success:', data);
                 // Você pode redirecionar ou mostrar uma mensagem de sucesso
             })
