@@ -169,7 +169,13 @@
                 filteredSoftwares.forEach(software => {
                     const softwareDiv = document.createElement('div');
                     softwareDiv.className = 'software-item';
-                    softwareDiv.innerHTML = `<strong>${software.name}</strong>: ${software.description}`;
+                    softwareDiv.innerHTML = `
+                        <h2>${software.name}</h2>
+                        <img src="${software.image}" alt="${software.name}" class="software-image">
+                        <p><strong>Descrição:</strong> ${software.description}</p>
+                        <p><strong>Data de Carregamento:</strong> ${software.date}</p>
+                        <p><strong>Visualizações:</strong> ${software.views}</p>
+                    `;
                     resultsContainer.appendChild(softwareDiv);
                 });
             } else {
