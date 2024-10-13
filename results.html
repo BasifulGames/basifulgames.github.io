@@ -158,7 +158,7 @@
             const resultsContainer = document.getElementById('results');
             const noResultsMessage = document.getElementById('no-results');
 
-            resultsContainer.innerHTML = '';
+            resultsContainer.innerHTML = ''; // Limpa o conteúdo do contêiner de resultados
             noResultsMessage.style.display = 'none'; // Oculta a mensagem de nenhum resultado
 
             const filteredSoftwares = softwares.filter(software =>
@@ -183,6 +183,7 @@
             }
         }
 
-        window.onload = displayResults;
+        // Executa a função de exibição de resultados ao carregar a página
+        document.addEventListener('DOMContentLoaded', displayResults);
     </script>
 </body> 
