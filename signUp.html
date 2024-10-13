@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="signup.php"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -30,11 +31,6 @@
                                         <input type="text" value name="FirstName" id="FirstName" spellcheck="false" n="1" class="   form-error" aria-invalid="true">
                                         <span class="placeholder-text" id="firstname-placeholder" style="display: block;">First</span>
                                     </label>
-                                    <label id="lastname-label" class="lastname">
-                                        <strong>Last Name</strong>
-                                        <input type="text" value name="LastName" id="LastName" spellcheck="false" n="2" class="   form-error" aria-invalid="true">
-                                        <span class="placeholder-text" id="lastname-placeholder" style="display: block;">Last</span>
-                                    </label>
                                     <label id="email-label" class="email">
                                         <strong>Email</strong>
                                         <input type="text" value name="Email" id="Email" spellcheck="false" n="2" class="   form-error" aria-invalid="true">
@@ -48,7 +44,7 @@
                                 </fieldset>
                                 <button type="submit" class="submit-button">Create Account</button> <!-- Botão de envio -->
                                 <span role="alert" class="errormsg" id="errormsg_0_FirstName" style="display: none;">You can't leave this empty.</span>
-                                <span role="alert" class="errormsg" id="errormsg_0_LastName">You can't leave this empty.</span>
+                                <span role="alert" class="errormsg" id="errormsg_0_LastName" style="display: none">You can't leave this empty.</span>
                                 <span role="alert" class="errormsg" id="errormsg_0_Email" style="display: none;">You can't leave this empty.</span>
                                 <span role="alert" class="errormsg" id="errormsg_0_Password" style="display: none;">You can't leave this empty.</span>
                             </div>
@@ -59,47 +55,39 @@
         </div>
     </div>
     <script>
-        document.getElementById('createaccount').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita o envio do formulário
-            
-            // Coleta os valores dos campos
-            const firstName = document.getElementById('FirstName').value;
-            const lastName = document.getElementById('LastName').value;
-            const email = document.getElementById('Email').value;
-            const password = document.getElementById('Password').value;
+        include 'db_connection.php';  // Certifique-se de que esse arquivo contém a conexão com o MySQL
 
-            // Validação simples (você pode adicionar mais validações conforme necessário)
-            if (firstName === '' || lastName === '' || email === '' || password === '') {
-                document.getElementById('error-message').innerText = 'Please fill in all fields.';
-                return;
-            }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Receber dados do formulário
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
 
-            // Aqui você pode adicionar a lógica para enviar os dados para o servidor
-            const data = {
-                firstName,
-                lastName,
-                email,
-                password
-            };
+    // Verificar se os campos estão preenchidos
+    if (!empty($username) && !empty($email) && !empty($password)) {
+        // Criptografar a senha antes de armazenar
+        $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
-            // Exemplo de envio de dados usando fetch
-            fetch('register.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                // Você pode redirecionar ou mostrar uma mensagem de sucesso
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                document.getElementById('error-message').innerText = 'An error occurred. Please try again.';
-            });
-        });
+        // Inserir usuário no banco de dados
+        $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $username, $email, $passwordHashed);
+
+        if ($stmt->execute()) {
+            echo "Conta criada com sucesso!";
+            // Redirecionar para a página de login ou outra página
+            header("Location: login.php");
+            exit();
+        } else {
+            echo "Erro ao criar a conta. Tente novamente.";
+        }
+    } else {
+        echo "Por favor, preencha todos os campos.";
+    }
+}
+
+// Fechar a conexão
+$conn->close();
     </script>
 </body>
 </html>
