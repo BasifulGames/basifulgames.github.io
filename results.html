@@ -26,8 +26,39 @@
                 display: none; /* Oculta inicialmente */
             }
             #results {
-                text-align: left; /* Para alocar corretamente os resultados */
-                margin: 20px; /* Espaço entre o resultado e a borda */
+                margin: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centraliza os itens */
+            }
+            .software-item {
+                display: flex; /* Flexbox para alinhar imagem e texto */
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                padding: 20px;
+                margin: 10px;
+                width: 80%; /* Largura do item */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+                align-items: center; /* Alinha a imagem e o texto no centro verticalmente */
+            }
+            .software-image {
+                max-width: 150px; /* Define uma largura fixa para a imagem */
+                height: auto; /* Mantém a proporção da imagem */
+                border-radius: 10px; /* Cantos arredondados */
+                margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+            }
+            .software-title {
+                font-size: 28px; /* Tamanho maior para o título */
+                color: darkslategray; /* Cor cinza escuro */
+                margin: 0; /* Remove a margem padrão do h2 */
+            }
+            .software-description {
+                margin: 5px 0; /* Margens para a descrição */
+                font-size: 16px; /* Tamanho da fonte padrão */
+            }
+            .software-meta {
+                font-size: 14px; /* Tamanho da fonte para metadados */
+                color: gray; /* Cor dos metadados */
             }
         </style>
     </head> 
@@ -47,8 +78,6 @@
                             </button>                             
                         </div>                         
                         <div id="bg-masthead-content"> 
-                            <div id="results"></div>
-                            <div id="no-results">Nenhum resultado encontrado.</div>
                             <form id="masthead-search" action="http://basifulgames.github.io/results" onsubmit="if (_gel('masthead-search-term').value == '') return false;" style="border: 2px solid transparent; border-image: linear-gradient(90deg, #fea225, #f17918, #e71d57, #8971ab, #5f9eca, #70b642); border-image-slice: 1;"> 
                                 <button dir="ltr" class="search-btn-component search-button bg-uix-button bg-uix-button-default bg-uix-button-size-default" onclick="if (_gel('masthead-search-term').value == '') return false; _gel('masthead-search').submit(); return false;;return true;" type="submit" id="search-btn" tabindex="2" role="button"> <span class="bg-uix-button-content">Search </span> 
                                 </button>                                 
@@ -61,7 +90,9 @@
                         </div>                         
                     </div>                     
                 </div>                 
-                <div id="masthead-appbar-container" class="clearfix"></div>                 
+                <div id="masthead-appbar-container" class="clearfix"></div>     
+                <div id="results"></div>
+                <div id="no-results">Nenhum resultado encontrado.</div>            
             </div>             
             <div id="masthead-positioner-height-offset"></div>             
             <div id="page-container"> 
@@ -183,6 +214,11 @@
             } else {
                 noResultsMessage.style.display = 'block'; // Exibe a mensagem de nenhum resultado
             }
+        }
+
+        // Redireciona se o usuário acessar diretamente results.html
+        if (window.location.pathname.endsWith('results.html')) {
+            window.location.href = 'https://basifulgames.github.io/';
         }
 
         // Executa a função de exibição de resultados ao carregar a página
