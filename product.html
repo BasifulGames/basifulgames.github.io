@@ -48,8 +48,36 @@
                             <video tabindex="-1" class="video-stream html5-main-video" controlslist="nodownload" style="width: 809px; height: 607px; left: 0px; top: 0px;" src="teasers/MFE Update 1.5.0.mp4"></video>                             
                         </div>                         
                     </div>                     
-                    <div id="content" class="  content-alignment    bg-card "> 
+                    <div id="content" class="  content-alignment    bg-card ">
+                        <div id="placeholder-player">
+                            <div class="player-api player-width player-height"></div>
+                        </div>
                         <div id="watch7-container" class> 
+                            <div id="player-messages">
+                                <div class="bg-dialog hid mealbar-promo-renderer">
+                                    <div class="bg-dialog-base">
+                                        <span class="bg-dialog-align"></span>
+                                        <div class="bg-dialog-fg" role="dialog">
+                                            <div class="bg-dialog-fg-content">
+                                                <div class="bg-dialog-header">
+                                                    <h2 class="bg-dialog-title" role="alert"> Try Basiful Apps for free </h2>
+                                                </div>
+                                                <div class="bg-dialog-loading">
+                                                    <div class="bg-dialog-waiting-content">
+                                                        <p class="bg-spinner ">
+                                                            <span class="bg-spinner-img  bg-sprite" title="Loading icon"></span>
+                                                            <span class="bg-spinner-message"> Loading... </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-dialog-content"></div>
+                                                <div class="bg-dialog-working"></div>
+                                                <div class="bg-dialog-footer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div id="watch7-main-container"> 
                                 <div id="watch7-main" class="clearfix"> 
                                     <div id="watch7-content" class="watch-content " itemscope itemid itemtype="http://schema.org/VideoObject"> 
@@ -59,17 +87,69 @@
                                             <div id="watch7-headline" class="clearfix  bg-uix-expander bg-uix-expander-collapsed"> 
                                                 <h1 id="watch-headline-title" class="bg">  <span id="eow-title" class="watch-title  bg-uix-expander-head" dir="ltr" title=""> TITLE</span>  </h1> 
                                             </div>                                             
-                                            <div id="watch7-user-header" class="spf-link"> <span class="g-hovercard bg-uix-sessionlink bg-user-name " data-name="watch">BasifulGames</span> 
-                                                <img src="/bg/img/favicon.png" class="bg-uix-tooltip bg-channel-title-icon-verified" alt title="Verified"> <span class="bg-user-separator">·</span> <a class="bg-uix-sessionlink bg-user-videos" href="" data-sessionlink="ei=VR5dU_3mNonG-APGzIGIDA&feature=watch">8 products</a> <br> 
-                                                <div id="watch7-views-info"> <span class="watch-view-count "> 5 </span> 
-                                                    <div class="video-extras-sparkbars"> 
-                                                        <div class="video-extras-sparkbar-likes" styles="width: 96.5504494458%"></div>                                                         
-                                                        <div class="video-extras-sparkbar-dislikes" style="width: 3.44955055418%"></div>                                                         
-                                                    </div>                                                     <span class="video-extras-likes-dislikes">  <img class="icon-watch-stats-like" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Like">  <span class="likes-count">1</span>   <img class="icon-watch-stats-dislike" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Dislike">  <span class="dislikes-count">0</span>  </span> 
-                                                </div>                                                 
+                                            <div id="watch7-user-header" class=" spf-link "> 
+                                                <a href="/user/basifulgames" class="bg-user-photo bg-uix-sessionlink">
+                                                    <span class="product-thumb  bg-thumb bg-thumb-48">
+                                                        <span class="bg-thumb-square">
+                                                            <span class="bg-thumb-clip">
+                                                                <img width="48" alt="User" height="48" src="image" onload=";window.__bgRIL && __bgRIL(this)">
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                                <div class="bg-user-info">
+                                                    <a href="/user/basifulgames" class="bg-uix-sessionlink       spf-link ">Basiful Games</a>
+                                                    <span class="bg-channel-title-icon-verified bg-uix-tooltip bg-sprite" aria-label="Verified" data-tooltip-text="Verified"></span>
+                                                </div>
+                                                <span id="watch7-download-container">
+                                                    <span class=" bg-uix-button-subscription-container">
+                                                        <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-download-branded bg-uix-button-has-icon no-icon-markup bg-uix-download-button bg-can-buffer bg-uix-servicelink"
+                                                    </span>
+                                                </span>
                                             </div>                                             
-                                            <div id="watch7-action-buttons" class="clearfix "> 
-                                                <div id="watch7-sentiment-actions"> <span id="watch-like-dislike-buttons" class="bg-uix-button-group " data-vote-state="2" data-button-toggle-group="optional">  <span class="bg-uix-clickcard">  <button id="watch-like" class="bg-uix-clickcard-target bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-button-has-icon bg-uix-tooltip" type="button" title onclick=";return false;" data-position="bottomright" data-like-tooltip="I like this" data-unlike-tooltip="Unlike" data-button-toggle="true" data-orientation="vertical" data-force-position="true" role="button"> <span class="bg-uix-button-icon-wrapper">  <img class="bg-uix-button-icon bg-uix-button-icon-watch-like" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt title>  </span> <span class="bg-uix-button-content">Like </span> 
+                                            <div id="watch7-action-buttons" class="watch-action-buttons clearfix"> 
+                                                <div id="watch7-secondary-actions" class="watch-secondary-actions bg-uix-button-group" data-button-toggle-group="optional">
+                                                    <span class="bg-uix-clickcard">
+                                                        <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-opacity bg-uix-button-has-icon no-icon-markup pause-resume-autoplay action-panel-trigger action-panel-trigger-share   bg-uix-tooltip" type="button" onclick=";return false;" title="Share" data-trigger-for="action-panel-share" data-button-toggle="true">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" focusable="false"style="vertical-align: middle;" width="20px" height="20px">
+                                                                <path d="M175,160c-6.9,0.2-13.6,2.6-19,7l-62-39c0.8-2.6,1.2-5.3,1-8c0.2-2.7-0.2-5.4-1-8l62-39c5.4,4.4,12.1,6.8,19,7c16.3,0.3,29.7-12.6,30-28.9c0-0.4,0-0.7,0-1.1c0-16.5-13.5-30-30-30s-30,13.5-30,30c-0.2,2.7,0.2,5.4,1,8L84,97c-5.4-4.4-12.1-6.8-19-7c-16.5,0-30,13.5-30,30s13.5,30,30,30c6.9-0.2,13.6-2.6,19-7l62,39c-0.8,2.6-1.2,5.3-1,8c0,16.5,13.5,30,30,30s30-13.5,30-30S191.6,160,175,160z"></path>
+                                                            </svg>
+                                                            <span class="bg-uix-button-content">Share</span>
+                                                            <div id="share-panel" class="share-panel" style="display: none;">
+                                                                <h3>Share this product</h3>
+                                                                <div class="social-icons">
+                                                                    <a href="#" onclick="shareOn('facebook'); return false;">
+                                                                        <img src="path/to/facebook-icon.png" alt="Facebook">
+                                                                    </a>
+                                                                    <a href="#" onclick="shareOn('twitter'); return false;">
+                                                                        <img src="path/to/twitter-icon.png" alt="Twitter">
+                                                                    </a>
+                                                                    <a href="#" onclick="shareOn('whatsapp'); return false;">
+                                                                        <img src="path/to/whatsapp-icon.png" alt="WhatsApp">
+                                                                    </a>
+                                                                    <a href="#" onclick="shareOn('linkedin'); return false;">
+                                                                        <img src="path/to/linkedin-icon.png" alt="LinkedIn">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="bg-uix-menu ">
+                                                            <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-opacity bg-uix-button-has-icon no-icon-markup pause-resume-autoplay bg-uix-menu-trigger bg-uix-tooltip" type="button" onclick=";return false;" role="button" id="action-panel-overflow-button" title="More actions" aria-label="Action menu."aria-haspopup="true" aria-pressed="false" data-tooltip-text="More actions" aria-labelledby="bg-uix-tooltip22-arialabel" aria-controls="aria-menu-id-3">
+                                                                <span class="bg-uix-button-content">More</span>
+                                                            </button>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                                <div id="watch7-sentiment-actions">
+                                                    <div id="watch7-views-info">
+                                                        <div class="watch-view-count">NaN views</div>
+                                                        <div class="product-extras-sparkbars">
+                                                            <div class="product-extras-sparkbar-likes" style="width: 98.9252561491%"></div>
+                                                            <div class="product-extras-sparkbar-dislikes" style="width: 1.07474385087%"></div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="like-button-render " data-button-toggle-group="optional"></span>
+                                                    <span id="watch-like-dislike-buttons" class="bg-uix-button-group " data-vote-state="2" data-button-toggle-group="optional">  <span class="bg-uix-clickcard">  <button id="watch-like" class="bg-uix-clickcard-target bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-button-has-icon bg-uix-tooltip" type="button" title onclick=";return false;" data-position="bottomright" data-like-tooltip="I like this" data-unlike-tooltip="Unlike" data-button-toggle="true" data-orientation="vertical" data-force-position="true" role="button"> <span class="bg-uix-button-icon-wrapper">  <img class="bg-uix-button-icon bg-uix-button-icon-watch-like" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt title>  </span> <span class="bg-uix-button-content">Like </span> 
                                                             </button>  <div class="watch7-hovercard bg-uix-clickcard-content"> 
                                                                 <h3 class="watch7-hovercard-header">Sign in to BasifulGames</h3> 
                                                                 <div class="watch7-hovercard-message">Sign in with your BasifulGames Account
@@ -97,15 +177,7 @@
                                                                 </div>                                                                 
                                                             </div>  </span>  <span class="bg-uix-clickcard">  <button id="watch-dislike" class="bg-uix-clickcard-target bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-button-has-icon bg-uix-tooltip bg-uix-button-empty" type="button" title="I dislike this" onclick=";return false;" data-force-position="true" role="button"> <span class="bg-uix-button-icon-wrapper">  <img class="bg-uix-button-icon bg-uix-button-icon-watch-dislike" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="I dislike this" title>  </span> 
                                                             </button>  <div class="watch7-hovercard bg-uix-clickcard-content"></div>  </span>  </span> 
-                                                </div>                                                 
-                                                <div id="watch7-secondary-actions" class="bg-uix-button-group" data-button-toggle-group="required"> <span>  <button onclick=";return false;" class="action-panel-trigger  bg-uix-button-toggled bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-tooltip" type="button" title data-button-toggle="true" data-trigger-for="action-panel-details" role="button"> <span class="bg-uix-button-content">About </span> 
-                                                        </button>  </span> <span>  <button onclick=";return false;" class="action-panel-trigger   bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-tooltip" type="button" title data-button-toggle="true" data-trigger-for="action-panel-details" role="button"> <span class="bg-uix-button-content">Share </span> 
-                                                        </button>  </span> <span class="bg-uix-clickcard">  <button onclick=";return false;" class="action-panel-trigger   bg-uix-clickcard-target bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-tooltip" type="button" title data-position="bottomleft" data-button-toggle="true" data-orientation="vertical" data-upsell="playlist" data-trigger-for="action-panel-none" role="button"> <span class="bg-uix-button-content">Add to </span> 
-                                                        </button>  <div class="watch7-hovercard bg-uix-clickcard-content"></div>  </span> <span>  <button onclick=";return false;" class="action-panel-trigger   bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-button-has-icon bg-uix-tooltip bg-uix-button-empty" type="button" title="Transcript" data-button-toggle="true" data-trigger-for="action-panel-transcript" role="button"> <span class="bg-uix-button-icon-wrapper">  <img class="bg-uix-button-icon bg-uix-button-icon-action-panel-transcript" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Transcript" title>  </span> 
-                                                        </button>  </span> <span>  <button onclick=";return false;" class="action-panel-trigger   bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-button-has-icon bg-uix-tooltip bg-uix-button-empty" type="button" title="Statistics" data-button-toggle="true" data-trigger-for="action-panel-stats" role="button"> <span class="bg-uix-button-icon-wrapper">  <img class="bg-uix-button-icon bg-uix-button-icon-action-panel-transcript" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Statistics" title>  </span> 
-                                                        </button>  </span> <span>  <button onclick=";return false;" class="action-panel-trigger   bg-uix-button bg-uix-button-text bg-uix-button-size-default bg-uix-button-has-icon bg-uix-tooltip bg-uix-button-empty" type="button" title="Report" data-button-toggle="true" data-trigger-for="action-panel-report" role="button"> <span class="bg-uix-button-icon-wrapper">  <img class="bg-uix-button-icon bg-uix-button-icon-action-panel-transcript" src="https://web.archive.org/web/20140427151221im_/http://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Report" title>  </span> 
-                                                        </button>  </span> 
-                                                </div>                                                 
+                                                </div>                                                
                                             </div>                                             
                                             <div id="watch7-action-panels" class="bg-uix-button-panel "> 
                                                 <div id="action-panel-details" class="action-panel-content "> 
@@ -272,5 +344,52 @@
         }
 
         window.onload = loadProductData;
+
+        function toggleSharePanel() {
+    const panel = document.getElementById('share-panel');
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    document.getElementById('share-url').value = window.location.href; // Define a URL a ser copiada
+}
+
+document.querySelector('.action-panel-trigger-share').onclick = toggleSharePanel;
+
+function shareOn(platform) {
+    const url = window.location.href; // URL atual
+    let shareUrl = '';
+
+    switch (platform) {
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            break;
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+            break;
+        case 'whatsapp':
+            shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
+            break;
+        case 'linkedin':
+            shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}`;
+            break;
+        // Adicione mais plataformas se necessário
+    }
+
+    window.open(shareUrl, '_blank');
+}
+
+function copyUrl() {
+    const urlField = document.getElementById('share-url');
+    urlField.select();
+    document.execCommand('copy'); // Copia a URL para a área de transferência
+    alert('URL copiada para a área de transferência!');
+}
+
     </script>     
+    <div class="bg-uix-menu-content bg-ui-menu-content bg-uix-kbd-nav" role="menu" style="min-width: 69px; left: 189.062px; top: 755px;" aria-expanded="true" id="aria-menu-id-3" data-kbd-nav-move-out="action-panel-overflow-button">
+        <ul id="action-panel-overflow-menu" tabindex="0" class="bg-uix-kbd-nav bg-uix-kbd-nav-list">
+            <li>
+                <span class="bg-uix-clickcard" data-card-class="report-card"></span>
+            </li>
+        </ul>
+    </div>
+    <irame src="javascript:&quot;&quot;" class="bg-uix-menu-mask" allow="autoplay 'self'; fullscreen 'self'" style="width: 156px; height: 74px; left: 189.062px; top: 755px;"></irame>
 </body> 
