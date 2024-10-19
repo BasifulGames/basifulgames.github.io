@@ -1721,8 +1721,8 @@ h6.yt small {
 }
 
 .yt-badge-live {
-    border: 1px solid #e62117;
-    color: #e62117;
+    border: 1px solid #1a73c7 ;
+    color: #1a73c7 ;
 }
 
 .yt-music-pass-badge-container {
@@ -2352,35 +2352,35 @@ a:hover .yt-uix-simple-thumb-wrap .video-time {
     display: none;
 }
 
-p.yt-spinner {
+p.bg-spinner {
     text-align: center;
     padding: 1em;
     margin: 0;
     line-height: 20px;
 }
 
-.yt-spinner-img,
-.yt-spinner-overlay {
+.bg-spinner-img,
+.bg-spinner-overlay {
     background: url(//web.archive.org/web/20140427151114im_/http://s.ytimg.com/yts/img/icn_loading_animated-vflff1Mjj.gif) no-repeat center;
 }
 
-.yt-spinner-img {
+.bg-spinner-img {
     width: 20px;
     height: 20px;
     vertical-align: middle;
 }
 
-.yt-spinner-message {
+.bg-spinner-message {
     vertical-align: middle;
 }
 
-.yt-large-spinner-img {
+.bg-large-spinner-img {
     width: 48px;
     height: 48px;
     background: url(//web.archive.org/web/20140427151114im_/http://s.ytimg.com/yts/img/loader_large-vflin3vnt.gif) no-repeat center;
 }
 
-.yt-thumb {
+/*.bg-thumb {
     width: 100%;
     overflow: hidden;
     background: #f1f1f1;
@@ -2389,7 +2389,7 @@ p.yt-spinner {
     display: inline-block;
     display: inline;
     zoom: 1;
-}
+}*/
 
 .yt-thumb .vertical-align {
     height: 100%;
@@ -4865,7 +4865,7 @@ body.bg-dialog-active {
     margin-top: -7px;
 }
 
-.yt-dialog-waiting-content .yt-spinner-img {
+.bg-dialog-waiting-content .bg-spinner-img {
     float: left;
     margin-right: 8px;
 }
@@ -8949,7 +8949,7 @@ button.nudge-right img {
     background: rgba(255,255,255,.95);
 }
 
-#guide-container.loading .yt-spinner {
+#guide-container.loading .bg-spinner {
     margin: 0;
     padding: 0;
     line-height: 23px;
@@ -10250,7 +10250,7 @@ body[data-player-size=fullscreen] .player-api {
     display: block;
 }
 
-#watch-related>.yt-spinner {
+#watch-related>.bg-spinner {
     opacity: .5;
     filter: alpha(opacity=50);
 }
@@ -10719,15 +10719,6 @@ p.bg-spinner {
     display: inline-block;
 }
 
-.bg-spinner-img {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-}
-
-.bg-spinner-img, .bg-spinner-overlay {
-    background: url(//web.archive.org/web/20180901075004im_/https://s.ytimg.com/yts/img/icn_loading_animated-vflff1Mjj.gif) no-repeat center;
-}
 
 #watch7-action-buttons .bg-uix-button, #watch7-action-buttons .bg-uix-button:hover, #action-panel-dismiss, #action-panel-dismiss:hover {
     background: none;
@@ -10772,15 +10763,16 @@ p.bg-spinner {
     z-index: 1000;
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
+#share-panel {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.social-icons img {
-    width: 30px;
-    height: auto;
-    cursor: pointer;
+#social-icons a,
+#more-social-icons a {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
 }
 
 .bg-uix-button-icon-wrapper, .bg-uix-button-has-icon.no-icon-markup:before {
@@ -10904,11 +10896,70 @@ p.bg-spinner {
     height: 24px;
 }
 
-.yt-uix-button.yt-uix-button-subscribe-branded, .yt-uix-button.bg-uix-button-downloaded-branded, .bg-uix-button.bg-uix-button-download-unbranded, .yt-uix-button.yt-uix-button-subscribed-unbranded {
+.bg-uix-button.bg-uix-button-download-branded, .bg-uix-button.bg-uix-button-downloaded-branded, .bg-uix-button.bg-uix-button-download-unbranded, .bg-uix-button.yt-uix-button-downloaded-unbranded {
     max-width: 100%;
 }
 
-.yt-uix-button-subscribe-branded, .yt-uix-button-subscribe-branded[disabled], .yt-uix-button-subscribe-branded[disabled]:hover, .yt-uix-button-subscribe-branded[disabled]:active, .yt-uix-button-subscribe-branded[disabled]:focus {
+.bg-uix-button-download-branded, .bg-uix-button-download-branded[disabled], .bg-uix-button-download-branded[disabled]:hover, .bg-uix-button-download-branded[disabled]:active, .bg-uix-button-download-branded[disabled]:focus {
     color: #fefefe;
-    background-color: #e62117;
+    background-color: #1a73c7;
+}
+
+.bg-uix-button-download-branded .download-label, .bg-uix-button-download-branded .unavailable-label, .bg-uix-button-downloaded-branded .downloaded-label, .bg-uix-button-downloaded-branded.hover-enabled:hover .cant-download-label, .bg-uix-button-download-unbranded .download-label, .bg-uix-button-download-unbranded .unavailable-label, .bg-uix-button-downloaded-unbranded .downloaded-label, .bg-uix-button-downloaded-unbranded.hover-enabled:hover .cant-download-label {
+    display: inline;
+}
+
+.download-label, .downloaded-label, .cant-download-label, .unavailable-label, .bg-uix-button-downloaded-branded.hover-enabled:hover .downloaded-label, .bg-uix-button-downloaded-unbranded.hover-enabled:hover .downloaded-label {
+    display: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.bg-uix-downloads-preferences-button {
+    display: none;
+    margin-left: -2px;
+    padding: 0 4px;
+    height: 24px;
+    border-radius: 0 2px 2px 0;
+}
+
+@media only screen and (min-width: 850px) {
+    .exp-responsive #content .bg-uix-button-downloading-container .bg-downloads-count {
+        display: inline-block;
+    }
+}
+
+.exp-responsive #content .bg-uix-button-downloading-container .bg-downloads-count {
+    display: none;
+}
+
+.bg-uix-button-download-branded+.bg-downloading-button-download-count-branded-horizontal, .bg-uix-button-download-branded+.bg-uix-downloading-preferences-button+.bg-downloading-button-download-count-branded-horizontal, .bg-uix-button-downloaded-branded.external+.bg-downloading-button-download-count-branded-horizontal, .bg-uix-button-downloaded-branded.external+.bg-uix-downloading-preferences-button+.bg-downloading-button-download-count-branded-horizontal {
+    border-left: none;
+    padding-left: 7px;
+}
+
+.bg-uix-button-download-branded+.bg-downloading-button-download-count-branded-horizontal, .bg-uix-button-download-branded+.bg-uix-downloading-preferences-button+.bg-downloading-button-download-count-branded-horizontal, .bg-uix-button-downloaded-branded.external+.bg-downloading-button-download-count-branded-horizontal, .bg-uix-button-downloaded-branded.external+.bg-uix-downloading-preferences-button+.bg-downloading-button-download-count-branded-horizontal {
+    border-left: none;
+    padding-left: 7px;
+}
+
+.bg-downloading-button-download-count-branded-horizontal {
+    height: 22px;
+    line-height: 24px;
+}
+
+.bg-downloading-button-download-count-branded-horizontal, .bg-downloading-button-download-count-unbranded-horizontal {
+    padding: 0 6px;
+    color: #737373;
+    font-size: 11px;
+    text-align: center;
+}
+
+.bg-downloading-button-download-count-branded-horizontal, .bg-downloading-button-download-count-unbranded-horizontal {
+    display: none;
+    margin-left: -2px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    vertical-align: middle;
+    border-radius: 0 2px 2px 0;
 }

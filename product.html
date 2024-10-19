@@ -102,8 +102,43 @@
                                                     <span class="bg-channel-title-icon-verified bg-uix-tooltip bg-sprite" aria-label="Verified" data-tooltip-text="Verified"></span>
                                                 </div>
                                                 <span id="watch7-download-container">
-                                                    <span class=" bg-uix-button-subscription-container">
-                                                        <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-download-branded bg-uix-button-has-icon no-icon-markup bg-uix-download-button bg-can-buffer bg-uix-servicelink"
+                                                    <span class=" bg-uix-button-downloading-container">
+                                                        <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-download-branded bg-uix-button-has-icon no-icon-markup bg-uix-download-button bg-can-buffer bg-uix-servicelink">
+                                                            <span class="bg-uix-button-content">
+                                                                <span class="download-label" aria-label="Download">Download</span>
+                                                                <span class="downloaded-label" aria-label="Downloaded">Downloaded</span>
+                                                                <span class="cant-download-label" aria-label="Can't Download">Can't Download</span>
+                                                            </span>
+                                                        </button>
+                                                        <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-default bg-uix-button-empty bg-uix-button-has-icon bg-uix-downloading-preferences-button" onclick=";return false;" aria-label="Downloading preferences" aria-live="polite" aria-role="button" aria-busy="false">
+                                                            <span class="bg-uix-button-icon-wrapper">
+                                                                <span class="bg-uix-button-icon bg-uix-button-icon-downloading-preferences bg-sprite">
+                                                            </span>
+                                                        </button>
+                                                        <span class="bg-downloading-button-download-count-branded-horizontal bg-downloads-count" title="NaN" aria-label="NaN" tabindex="0">NaN</span>
+                                                        <span class="downloading-preferences-overlay-container">
+                                                            <div class="bg-uix-overlay ">
+                                                                <div class="bg-dialog hid">
+                                                                    <span class="bg-dialog-align"></span>
+                                                                    <div class="bg-dialog-fg" role="dialog">
+                                                                        <div class="bg-dialog-fg-content">
+                                                                            <div class="bg-dialog-loading"></div>
+                                                                            <div class="bg-dialog-content">
+                                                                                <div class="downloading-preferences-overlay-container">
+                                                                                    <div class="downloading-preferences-overlay-loading ">
+                                                                                        <p class="bg-spinner ">
+                                                                                            <span class="bg-spinner-img  bg-sprite" title="Loading icon"></span>
+                                                                                            <span class="bg-spinner-message"> Loading... </span>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bg-dialog-working"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </span>
                                                     </span>
                                                 </span>
                                             </div>                                             
@@ -115,24 +150,49 @@
                                                                 <path d="M175,160c-6.9,0.2-13.6,2.6-19,7l-62-39c0.8-2.6,1.2-5.3,1-8c0.2-2.7-0.2-5.4-1-8l62-39c5.4,4.4,12.1,6.8,19,7c16.3,0.3,29.7-12.6,30-28.9c0-0.4,0-0.7,0-1.1c0-16.5-13.5-30-30-30s-30,13.5-30,30c-0.2,2.7,0.2,5.4,1,8L84,97c-5.4-4.4-12.1-6.8-19-7c-16.5,0-30,13.5-30,30s13.5,30,30,30c6.9-0.2,13.6-2.6,19-7l62,39c-0.8,2.6-1.2,5.3-1,8c0,16.5,13.5,30,30,30s30-13.5,30-30S191.6,160,175,160z"></path>
                                                             </svg>
                                                             <span class="bg-uix-button-content">Share</span>
-                                                            <div id="share-panel" class="share-panel" style="display: none;">
-                                                                <h3>Share this product</h3>
-                                                                <div class="social-icons">
-                                                                    <a href="#" onclick="shareOn('facebook'); return false;">
-                                                                        <img src="path/to/facebook-icon.png" alt="Facebook">
-                                                                    </a>
-                                                                    <a href="#" onclick="shareOn('twitter'); return false;">
-                                                                        <img src="path/to/twitter-icon.png" alt="Twitter">
-                                                                    </a>
-                                                                    <a href="#" onclick="shareOn('whatsapp'); return false;">
-                                                                        <img src="path/to/whatsapp-icon.png" alt="WhatsApp">
-                                                                    </a>
-                                                                    <a href="#" onclick="shareOn('linkedin'); return false;">
-                                                                        <img src="path/to/linkedin-icon.png" alt="LinkedIn">
-                                                                    </a>
-                                                                </div>
-                                                            </div>
                                                         </button>
+                                                        <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 999;"></div>
+
+                                                        <div id="share-panel" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 10px; padding: 20px; z-index: 1000; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); width: 400px;">
+                                                            <button id="close-panel" style="background: transparent; border: none; cursor: pointer; position: absolute; top: 10px; right: 10px; font-size: 20px;">&times;</button>
+                                                            <h3>Share</h3>
+                                                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                                                <a href="#" target="_blank" aria-label="Share on Facebook" onclick="share('facebook')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3B5998"><path d="M22.675 0h-21.35C.596 0 0 .596 0 1.325v21.35C0 23.404.596 24 1.325 24h21.35C23.404 24 24 23.404 24 22.675v-21.35C24 .596 23.404 0 22.675 0zm-2.075 12.392h-3.003v10.617h-4.033V12.392h-2.74V9.668h2.74V7.577c0-2.671 1.57-4.133 3.847-4.133 1.096 0 2.291.194 2.291.194v2.707h-1.291c-1.273 0-1.67.791-1.67 1.603v1.882h3.078l-.493 2.724z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share on Twitter" onclick="share('twitter')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1DA1F2"><path d="M23.953 4.57c-.885.392-1.83.654-2.825.775 1.017-.611 1.794-1.577 2.163-2.724-.951.563-2.005.974-3.127 1.195-.895-.953-2.168-1.545-3.594-1.545-2.719 0-4.927 2.205-4.927 4.91 0 .385.045.761.127 1.124-4.092-.205-7.72-2.167-10.148-5.144-.423.727-.666 1.575-.666 2.478 0 1.71.87 3.215 2.189 4.092-.807-.026-1.566-.247-2.229-.616v.061c0 2.389 1.693 4.372 3.947 4.837-.413.111-.846.171-1.292.171-.316 0-.622-.031-.922-.086.623 1.946 2.432 3.357 4.57 3.396-1.676 1.313-3.785 2.097-6.064 2.097-.393 0-.781-.023-1.165-.067 2.167 1.396 4.754 2.209 7.507 2.209 9.017 0 13.916-7.467 13.916-13.917 0-.212 0-.425-.015-.637.951-.688 1.776-1.55 2.433-2.537z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share on LinkedIn" onclick="share('linkedin')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share on WhatsApp" onclick="share('whatsapp')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#25D366"><path d="M12.036 5.339c-3.635 0-6.591 2.956-6.593 6.589-.001 1.483.434 2.594 1.164 3.756l-.666 2.432 2.494-.654c1.117.663 2.184 1.061 3.595 1.061 3.632 0 6.591-2.956 6.592-6.59.003-3.641-2.942-6.593-6.586-6.594zm3.876 9.423c-.165.463-.957.885-1.337.942-.341.051-.773.072-1.248-.078-.288-.091-.657-.213-1.129-.417-1.987-.858-3.285-2.859-3.384-2.991-.099-.132-.809-1.074-.809-2.049 0-.975.512-1.454.693-1.653.182-.2.396-.25.528-.25l.38.007c.122.006.285-.046.446.34.165.397.561 1.372.611 1.471.049.099.083.215.016.347-.066.132-.099.215-.198.33l-.297.347c-.099.099-.202.206-.087.404.116.198.513.847 1.102 1.372.757.675 1.395.884 1.593.983.198.099.314.083.429-.05.116-.132.495-.578.627-.777s.264-.165.446-.099 1.156.545 1.354.645c.198.099.33.149.38.231.049.085.049.482-.116.945zm3.088-14.762h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-6.967 19.862c-1.327 0-2.634-.333-3.792-.965l-4.203 1.103 1.125-4.108c-.694-1.202-1.059-2.566-1.058-3.964.002-4.372 3.558-7.928 7.928-7.928 2.121.001 4.112.827 5.609 2.325s2.321 3.491 2.32 5.609c-.002 4.372-3.559 7.928-7.929 7.928z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share by E-mail" onclick="share('email')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#C32AA3"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share on Reddit" onclick="share('reddit')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF4500"><path d="M14.238 15.348c.085.084.085.221 0 .306-.465.462-1.194.687-2.231.687l-.008-.002-.008.002c-1.036 0-1.766-.225-2.231-.688-.085-.084-.085-.221 0-.305.084-.084.222-.084.307 0 .379.377 1.008.561 1.924.561l.008.002.008-.002c.915 0 1.544-.184 1.924-.561.085-.084.223-.084.307 0zm-3.44-2.418c0-.507-.414-.919-.922-.919-.509 0-.923.412-.923.919 0 .506.414.918.923.918.508.001.922-.411.922-.918zm13.202-.93c0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12 12 5.373 12 12zm-5-.129c0-.851-.695-1.543-1.55-1.543-.417 0-.795.167-1.074.435-1.056-.695-2.485-1.137-4.066-1.194l.865-2.724 2.343.549-.003.034c0 .696.569 1.262 1.268 1.262.699 0 1.267-.566 1.267-1.262s-.568-1.262-1.267-1.262c-.537 0-.994.335-1.179.804l-2.525-.592c-.11-.027-.223.037-.257.145l-.965 3.038c-1.656.02-3.155.466-4.258 1.181-.277-.255-.644-.415-1.05-.415-.854.001-1.549.693-1.549 1.544 0 .566.311 1.056.768 1.325-.03.164-.05.331-.05.5 0 2.281 2.805 4.137 6.253 4.137s6.253-1.856 6.253-4.137c0-.16-.017-.317-.044-.472.486-.261.82-.766.82-1.353zm-4.872.141c-.509 0-.922.412-.922.919 0 .506.414.918.922.918s.922-.412.922-.918c0-.507-.413-.919-.922-.919z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share on Pinterest" onclick="share('pinterest')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#E60023"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-7 20c-.825 0-1.62-.125-2.369-.357.326-.531.813-1.402.994-2.098l.499-1.901c.261.498 1.023.918 1.833.918 2.414 0 4.152-2.219 4.152-4.976 0-2.643-2.157-4.62-4.933-4.62-3.452 0-5.286 2.317-5.286 4.841 0 1.174.625 2.634 1.624 3.1.151.07.232.039.268-.107l.222-.907c.019-.081.01-.15-.056-.23-.331-.4-.595-1.138-.595-1.825 0-1.765 1.336-3.472 3.612-3.472 1.965 0 3.341 1.339 3.341 3.255 0 2.164-1.093 3.663-2.515 3.663-.786 0-1.374-.649-1.185-1.446.226-.951.663-1.977.663-2.664 0-.614-.33-1.127-1.012-1.127-.803 0-1.448.831-1.448 1.943 0 .709.239 1.188.239 1.188s-.793 3.353-.938 3.977c-.161.691-.098 1.662-.028 2.294-2.974-1.165-5.082-4.06-5.082-7.449 0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share on Tumblr" onclick="share('tumblr')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#34526f"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-1.105 18.739c-.524.691-2.29 1.261-3.889 1.261-3.979 0-6.006-1.466-6.006-4.573v-4.104h-1.933l-.067-.067v-3.16l.045-.064.178-.059c1.597-.534 2.624-1.432 2.851-3.284.055-.447.431-.689.757-.689h4.767l.066.067v3.211l.066.067h2.535l.068.067v3.844l-.068.067h-2.545l-.067.067v3.81c.002.103.006.414.109.414h2.182l.064.046.992 2.941-.105.138zm-1.309-2.278l.664 1.967-.016.07c-.5.48-1.703.837-2.686.854l-.111.001c-3.232 0-3.788-2.468-3.788-3.926v-4.692l-.066-.067h-1.854l-.067-.067-.016-2.041.042-.062c1.67-.65 2.604-1.73 2.849-3.729.014-.111.105-.114.106-.114h2.298l.067.067v3.211l.068.067h2.535l.066.067v2.534l-.066.067h-2.547l-.064.067v4.47c.016.959.477 1.445 1.377 1.445.362 0 .744-.084 1.123-.229l.086.04z"/></svg>
+                                                                </a>
+                                                                <a href="#" target="_blank" aria-label="Share on Blogger" onclick="share('blogger')">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fc4f08"><path d="M8 9c0-.552.414-1 .924-1h2.818c.512 0 .924.448.924 1s-.412 1-.924 1h-2.818c-.51 0-.924-.448-.924-1zm7.013 5h-6.027c-.545 0-.986.447-.986 1s.441 1 .986 1h6.026c.546 0 .988-.448.988-1s-.442-1-.987-1zm8.987-9v14c0 2.761-2.238 5-5 5h-14c-2.762 0-5-2.239-5-5v-14c0-2.761 2.238-5 5-5h14c2.762 0 5 2.239 5 5zm-4 5.812c0-.438-.354-.792-.79-.792h-1.301c-.666 0-.789-.509-.789-1.138 0-2.696-2.182-4.882-4.873-4.882h-3.374c-2.691 0-4.873 2.186-4.873 4.883v6.234c0 2.697 2.182 4.883 4.873 4.883h6.255c2.69 0 4.872-2.186 4.872-4.883v-4.305z"/></svg>
+                                                                </a>
+                                                            </div>
+
+                                                            <button id="toggle-more" style="margin-top: 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">View More</button>
+    
+                                                            <div id="url-container" style="display: none; margin-top: 10px;">
+                                                                <input type="text" id="share-url" value="https://example.com" readonly style="width: 300px; padding: 5px; border: 1px solid #ddd; border-radius: 5px;"/>
+                                                                <button id="copy-url" style="margin-top: 5px; background-color: #28A745; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">Copy URL</button>
+                                                            </div>
+                                                        </div>
                                                         <div class="bg-uix-menu ">
                                                             <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-opacity bg-uix-button-has-icon no-icon-markup pause-resume-autoplay bg-uix-menu-trigger bg-uix-tooltip" type="button" onclick=";return false;" role="button" id="action-panel-overflow-button" title="More actions" aria-label="Action menu."aria-haspopup="true" aria-pressed="false" data-tooltip-text="More actions" aria-labelledby="bg-uix-tooltip22-arialabel" aria-controls="aria-menu-id-3">
                                                                 <span class="bg-uix-button-content">More</span>
@@ -351,39 +411,87 @@
     document.getElementById('share-url').value = window.location.href; // Define a URL a ser copiada
 }
 
-document.querySelector('.action-panel-trigger-share').onclick = toggleSharePanel;
+function share(platform) {
+    const url = document.getElementById("share-url").value;
+    let shareUrl;
 
-function shareOn(platform) {
-    const url = window.location.href; // URL atual
-    let shareUrl = '';
-
-    switch (platform) {
+    switch(platform) {
         case 'facebook':
             shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
             break;
         case 'twitter':
             shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
             break;
-        case 'whatsapp':
-            shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
-            break;
         case 'linkedin':
             shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}`;
             break;
-        // Adicione mais plataformas se necessário
+        case 'whatsapp':
+            shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
+            break;
+        case 'email':
+            shareUrl = `mailto:?subject=${title}&body=${url}`;
+            break;
+        case 'reddit':
+            shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;
+            break;
+        case 'tumblr':
+            shareUrl = `https://www.tumblr.com/share/link?url=${encodeURIComponent(url)}&name=${encodeURIComponent(title)}`;
+            break;
+        case 'pinterest':
+            shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&description=${encodeURIComponent(title)}`;
+            break;
+        case 'blogger':
+            shareUrl = `https://www.blogger.com/blog-this.g?u=${encodeURIComponent(url)}&n=${encodeURIComponent(title)}`;
+            break;
+        default:
+            return;
     }
 
-    window.open(shareUrl, '_blank');
+    if (shareUrl) {
+        window.open(shareUrl, '_blank');
+    }
 }
 
-function copyUrl() {
-    const urlField = document.getElementById('share-url');
-    urlField.select();
-    document.execCommand('copy'); // Copia a URL para a área de transferência
-    alert('URL copiada para a área de transferência!');
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.getElementById("toggle-more");
+    const urlContainer = document.getElementById("url-container");
+    const sharePanel = document.getElementById("share-panel");
+    const overlay = document.getElementById("overlay");
+    const closePanelButton = document.getElementById("close-panel");
 
-    </script>     
+    function openPanel() {
+        sharePanel.style.display = "block";
+        overlay.style.display = "block";
+    }
+
+    function closePanel() {
+        sharePanel.style.display = "none";
+        overlay.style.display = "none";
+    }
+
+    toggleButton.addEventListener("click", function() {
+        if (urlContainer.style.display === "none") {
+            urlContainer.style.display = "block";
+            toggleButton.textContent = "View Çess";
+        } else {
+            urlContainer.style.display = "none";
+            toggleButton.textContent = "View More";
+        }
+    });
+
+    closePanelButton.addEventListener("click", closePanel);
+    overlay.addEventListener("click", closePanel);
+
+    document.getElementById("copy-url").addEventListener("click", function() {
+        const urlInput = document.getElementById("share-url");
+        urlInput.select();
+        document.execCommand("copy");
+        alert("URL copiada: " + urlInput.value);
+    });
+
+    document.querySelector('.action-panel-trigger-share').addEventListener('click', openPanel);
+});
+    </script> 
     <div class="bg-uix-menu-content bg-ui-menu-content bg-uix-kbd-nav" role="menu" style="min-width: 69px; left: 189.062px; top: 755px;" aria-expanded="true" id="aria-menu-id-3" data-kbd-nav-move-out="action-panel-overflow-button">
         <ul id="action-panel-overflow-menu" tabindex="0" class="bg-uix-kbd-nav bg-uix-kbd-nav-list">
             <li>
