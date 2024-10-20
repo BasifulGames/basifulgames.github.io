@@ -43,6 +43,37 @@
             <div id="masthead-positioner-height-offset"></div>             
             <div id="page-container"> 
                 <div id="page" class="  watch      watch-non-stage-mode   clearfix"> 
+                    <div id="guide" class="bg-scrollbar">
+
+                    </div>
+                    <div class="alerts-wrapper">
+                        <div id="alerts" class="content-alignment">
+                            <div id="editor-progress-alert-container"></div>
+                            <div class="bg-alert bg-alert-default bg-alert-warn hid " id="editor-progress-alert-template">
+                                <div class="bg-alert-icon">
+                                    <span class="icon master-sprite bg-sprite"></span>
+                                </div>
+                                <div class="bg-alert-content" role="alert"></div>
+                                <div class="bg-alert-buttons">
+                                    <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-close close bg-uix-close" type="button" onclick=";return false;" aria-label="Close" data-close-parent-class="bg-alert">
+                                        <span class="bg-uix-button-content">Close</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-alert bg-alert-actionable bg-alert-info hid " id="edit-confirmation-alert-template">
+                                <div class="bg-alert-icon">
+
+                                </div>
+                                <div class="bg-alert-content" role="alert">
+
+                                </div>
+                                <div class="bg-alert-buttons">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="header"></div>
                     <div id="player" class="  content-alignment       watch-small  "> 
                         <div id="player-mole-container">
                             <div id="player-unavailable" class="    hid    player-width player-height    player-unavailable ">
@@ -57,6 +88,7 @@
                     </div>                     
                     <div id="content" class="  content-alignment    bg-card ">
                         <div id="placeholder-player">
+                            <video id="productVideo" class="video-stream html5-main-video" src="" width="854px" height="480px"></video>
                             <div class="player-api player-width player-height"></div>
                         </div>
                         <div id="watch7-container" class> 
@@ -112,6 +144,9 @@
                                                     <span class=" bg-uix-button-downloading-container">
                                                         <button class="bg-uix-button bg-uix-button-size-default bg-uix-button-download-branded bg-uix-button-has-icon no-icon-markup bg-uix-download-button bg-can-buffer bg-uix-servicelink">
                                                             <span class="bg-uix-button-content">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#fff" vertical-align="middle" viewBox="0 0 24 24">
+                                                                    <path d="M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z"/>
+                                                                </svg>
                                                                 <span class="download-label" aria-label="Download">Download</span>
                                                                 <span class="downloaded-label" aria-label="Downloaded">Downloaded</span>
                                                                 <span class="cant-download-label" aria-label="Can't Download">Can't Download</span>
@@ -342,28 +377,28 @@
                     1: {
                         title: "Multi-funtion Entertainment",
                         description: "Founded in November 2022, Multi-function entertainment is a consumer media company for people to entertaining yoursef.",
-                        videoUrl: "videos/video1.mp4",
+                        videoUrl: "/teasers/Multi-function Entertainment.mp4",
                         views: "200 views",
                         releaseDate: "November 2022"
                     },
                     2: {
                         title: "Synonymous Checker",
                         description: "An application that serves to consult synonyms for a given word. Execute the .msi file to install the product on your computer. After running and enjoying the product, leave your feedback here so we can improve our product.",
-                        videoUrl: "videos/video2.mp4",
+                        videoUrl: "/teasers/SynonymousChecker.mp4",
                         views: "150 views",
                         releaseDate: "October 2023"
                     },
                     3: {
                         title: "Passwords Rememberer",
                         description: "With this software you can save your passwords.",
-                        videoUrl: "videos/video2.mp4",
+                        videoUrl: "/teasers/Passwords Rememberer Update.mp4",
                         views: "150 views",
                         releaseDate: "05/10/2023"
                     },
                     4: {
                         title: "Random Number & Letter Generator + Coin Flip",
                         description: "An software who generates random numbers & letters!",
-                        videoUrl: "videos/video2.mp4",
+                        videoUrl: "/teasers/Random Number Generator.mp4",
                         views: "150 views",
                         releaseDate: "05/10/2023"
                     },
@@ -377,7 +412,7 @@
                     6: {
                         title: "File Converter",
                         description: "An software who converts image files to what you want!",
-                        videoUrl: "videos/video2.mp4",
+                        videoUrl: "/teasers/File Converter.mp4",
                         views: "150 views",
                         releaseDate: "05/10/2023"
                     },
@@ -397,9 +432,11 @@
                     document.getElementById('eow-description').innerText = product.description;
                     document.getElementById('eow-date').innerText = product.releaseDate;
                     document.querySelector('.watch-view-count').innerText = product.views;
-                    document.getElementById('product-video-source').src = product.videoUrl;
+                    
+                    const videoElement = document.getElementById('productVideo');
+                    videoElement.src = product.videoUrl;
 
-                   const videoElement = document.getElementById('product-video');
+                    console.log('Video URL: ', product.videoUrl);
                     videoElement.load();
                 } else {
                     document.body.innerHTML = `

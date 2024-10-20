@@ -11018,3 +11018,38 @@ p.bg-spinner {
     margin-bottom: 10px;
     z-index: 0;
 }
+
+.bg-alert.bg-alert-warn .close {
+    background: no-repeat url(//web.archive.org/web/20180901075004im_/https://s.ytimg.com/yts/imgbin/www-hitchhiker-vfllYIUv0.png) -242px -687px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.bg-alert .close {
+    padding: 0;
+    margin: 6px 0;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: none;
+    background: no-repeat url(//web.archive.org/web/20180901075004im_/https://s.ytimg.com/yts/imgbin/www-hitchhiker-vfllYIUv0.png) -53px -701px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.bg-alert .bg-uix-button {
+    outline: 0;
+}
+
+@media screen and (min-width: 1294px) and (min-height: 630px) {
+    .player-height {
+        height: 480px;
+    }
+}
+@media screen and (min-width: 1294px) and (min-height: 630px) {
+    .player-width {
+        width: 854px;
+    }
+}
