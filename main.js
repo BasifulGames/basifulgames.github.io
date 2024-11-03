@@ -21,3 +21,39 @@ botaoProduto.addEventListener('click', function() {
     // Redireciona para products.html com o ID do produto como parâmetro de consulta
     window.location.href = 'products.html?p=' + idDoProduto;
 });
+
+function toggleLanguages() {
+  if ($(".idiomas-desplegar").is(":visible")) {
+      closeLanguages()
+  } else {
+      openLanguages()
+  }
+}
+function openLanguages() {
+  $(".languages-detach").slideDown();
+  $(".languages-detach-triangle").slideDown()
+}
+function closeLanguages() {
+  $(".languages-detach").slideUp(1);
+  $(".languages-detach-triangle").slideUp(1)
+}
+
+function startProgress() {
+  var progressBar = document.getElementById('ngProgress');
+  var width = 0;
+
+  // Aumenta a largura da barra de progresso a cada 100ms
+  var interval = setInterval(function() {
+      if (width >= 100) {
+          clearInterval(interval); // Para quando chegar a 100%
+      } else {
+          width++;
+          progressBar.style.width = width + '%'; // Atualiza a largura
+      }
+  }, 100); // Intervalo de tempo para aumentar a barra
+}
+
+// Chame a função quando necessário, por exemplo, ao carregar uma página
+window.onload = function() {
+  startProgress();
+};
